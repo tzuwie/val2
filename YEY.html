@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EHEYYYYY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ffdde1, #71045b);
+            text-align: center;
+            overflow: hidden;
+            background:url(bg.jpg);
+        }
+
+        .background {
+            width: 90%;
+            max-width: 500px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        h1 {
+            color: rgb(204, 32, 149);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .test {
+            width: 70%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        .heart {
+            position: fixed;
+            color: pink;
+            font-size: 1.5rem;
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <h1>EHEY THANK YOU IIIIIIDOLO</h1>
+        <img class="test" src="happy.jpg" alt="emoji" width="200px">
+        
+        <audio id="audio" autoplay hidden>
+            <source src="YEHEY.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <script>
+        const heartCreate = () => {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerText = "🩷";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        };
+        setInterval(heartCreate, 300);
+
+        document.addEventListener("click", function () {
+            document.getElementById("audio").play();
+        });
+    </script>
+
+</body>
+</html>
